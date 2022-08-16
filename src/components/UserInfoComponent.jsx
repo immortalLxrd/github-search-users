@@ -13,12 +13,14 @@ const UserInfoComponent = ({uri}) => {
 		<div className="user">
 			<div className="user__inner">
 				<SearchComponent searchProps={loginProps}/>
-				<FetchComponent
-					uri={fullUri}
-					renderSuccess={ProfileComponent}
-				/>
-
-				<UserRepositoriesComponent uri={fullUri}/>
+				{loginProps.value &&
+					<>
+						<FetchComponent
+							uri={fullUri}
+							renderSuccess={ProfileComponent}
+						/>
+						<UserRepositoriesComponent uri={fullUri}/>
+					</>}
 			</div>
 		</div>
 	);

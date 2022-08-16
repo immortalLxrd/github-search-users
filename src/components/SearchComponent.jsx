@@ -1,9 +1,10 @@
 import React from 'react';
+import Input from "./UI/Input";
 
 const SearchComponent = ({searchProps}) => {
-
 	return (
-		<input
+		<Input
+			className="user__input"
 			{...searchProps}
 		/>
 	);

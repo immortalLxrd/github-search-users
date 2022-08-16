@@ -3,7 +3,8 @@
 }
 
 ._container {
-  width: 1000px;
+  max-width: 1000px;
+  padding: 50px;
   margin: 0 auto;
 }
 
@@ -16,11 +17,20 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  text-align: center;
   height: 100vh;
 
   &__inner {
     width: 200px;
+  }
+
+  &__input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 2px solid #000;
+    border-radius: 10px;
+    font-size: 24px;
+    text-align: center;
   }
 
   &__list {
@@ -33,12 +43,13 @@
   }
 
   &__avatar {
-    border-radius: 50%;
     width: 200px;
     height: 200px;
+    border: 2px solid #000;
+    border-radius: 10%;
   }
 
   &__repositories {
-    margin-top: 40px;
+    margin-top: 20px;
   }
 }
