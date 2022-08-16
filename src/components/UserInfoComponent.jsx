@@ -5,7 +5,7 @@ import SearchComponent from "./SearchComponent";
 import useInput from "../hooks/useInput";
 
 const UserInfoComponent = ({uri}) => {
-	const [loginProps] = useInput();
+	const [loginProps] = useInput('');
 
 	let fullUri = `${uri}/${loginProps.value}`
 
