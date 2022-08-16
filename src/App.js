@@ -2,7 +2,7 @@ import './styles/App.scss';
 import UserComponent from "./components/UserComponent";
 
 
-const GITHUB_URI = "https://api.github.com/users/immortalLxrd";
+const GITHUB_URI = "https://api.github.com/users";
 
 const App = () => {
 	return (

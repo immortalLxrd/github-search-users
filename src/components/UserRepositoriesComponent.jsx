@@ -1,12 +1,12 @@
 import React from 'react';
 import FetchComponent from "./FetchComponent";
+import ListComponent from "./ListComponent";
 
 const UserRepositoriesComponent = ({uri}) => {
 	return (
 		<div className="user__repositories">
-			<h2 className="user__title">Repositories:</h2>
 			<FetchComponent
-				uri={uri+'/repos'}
+				uri={uri + '/repos'}
 				renderSuccess={RepositoryComponent}
 			/>
 		</div>
@@ -15,11 +15,14 @@ const UserRepositoriesComponent = ({uri}) => {
 
 function RepositoryComponent(data) {
 	return (
-		<ul>
-			{
-				Object.values(data).map(item => <li key={item.id}>{item.name}</li>)
-			}
-		</ul>
+		<>
+			<h2 className="user__title">Repositories:</h2>
+			<ListComponent
+				data={Object.values(data)}
+				renderItem={item => item.name}
+				renderEmpty={<p>This list is empty</p>}
+			/>
+		</>
 	);
 }
 

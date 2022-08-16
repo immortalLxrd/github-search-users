@@ -1,17 +1,24 @@
 import React from 'react';
 import FetchComponent from "./FetchComponent";
 import UserRepositoriesComponent from "./UserRepositoriesComponent";
+import SearchComponent from "./SearchComponent";
+import useInput from "../hooks/useInput";
 
 const UserInfoComponent = ({uri}) => {
+	const [loginProps] = useInput();
+
+	let fullUri = `${uri}/${loginProps.value}`
+
 	return (
 		<div className="user">
 			<div className="user__inner">
+				<SearchComponent searchProps={loginProps}/>
 				<FetchComponent
-					uri={uri}
+					uri={fullUri}
 					renderSuccess={ProfileComponent}
 				/>
 
-				<UserRepositoriesComponent uri={uri}/>
+				<UserRepositoriesComponent uri={fullUri}/>
 			</div>
 		</div>
 	);
