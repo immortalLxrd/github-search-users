@@ -2,6 +2,7 @@ import React from 'react';
 import FetchComponent from "./FetchComponent";
 import ListComponent from "./ListComponent";
 
+
 const UserRepositoriesComponent = ({uri}) => {
 	return (
 		<div className="user__repositories">
@@ -25,5 +26,6 @@ function RepositoryComponent(data) {
 		</>
 	);
 }
+
 
 export default UserRepositoriesComponent;

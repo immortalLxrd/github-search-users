@@ -4,6 +4,7 @@ import UserRepositoriesComponent from "./UserRepositoriesComponent";
 import SearchComponent from "./SearchComponent";
 import useInput from "../hooks/useInput";
 
+
 const UserInfoComponent = ({uri}) => {
 	const [loginProps] = useInput('');
 
@@ -49,5 +50,6 @@ function ProfileComponent(data) {
 		</>
 	);
 }
+
 
 export default UserInfoComponent;

@@ -1,6 +1,7 @@
 import useFetch from "../hooks/useFetch";
 import React from "react";
 
+
 const FetchComponent = ({
 	                        uri,
 	                        renderSuccess,
@@ -15,5 +16,6 @@ const FetchComponent = ({
 	if (error) return renderError(error);
 	if (data) return renderSuccess(data);
 };
+
 
 export default FetchComponent;
