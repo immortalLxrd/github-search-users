@@ -1,30 +1,34 @@
 import {fetchActions} from "../actions/fetchActions";
 
-export const INITIAL_STATE = {
+
+const initialState = {
 	data: {},
 	loading: true,
 	error: ''
 };
 
-export const fetchReducer = (state, action) => {
+const fetchReducer = (state, action) => {
 	switch (action.type) {
 		case fetchActions.FETCH_START:
 			return {
-				...INITIAL_STATE
+				...initialState
 			};
 		case fetchActions.FETCH_SUCCESS:
 			return {
-				...INITIAL_STATE,
+				...initialState,
 				data: action.payload,
 				loading: false
 			};
 		case fetchActions.FETCH_ERROR:
 			return {
-				...INITIAL_STATE,
-				error: action.error,
-				loading: false
+				...initialState,
+				loading: false,
+				error: action.error
 			};
 		default:
-			return INITIAL_STATE;
+			return initialState;
 	}
 };
+
+
+export {initialState, fetchReducer};

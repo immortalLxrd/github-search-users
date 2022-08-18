@@ -1,12 +1,15 @@
+import React from "react";
 import './styles/App.scss';
 import UserComponent from "./components/UserComponent";
 
 
 const App = () => {
 	return (
-		<div className="App">
-			<UserComponent/>
-		</div>
+		<React.StrictMode>
+			<div className="App">
+				<UserComponent/>
+			</div>
+		</React.StrictMode>
 	);
 };
 

@@ -1,5 +1,6 @@
 import React from 'react';
 
+
 const ListComponent = ({data, renderItem, renderEmpty}) => {
 	return !data.length ?
 		renderEmpty
@@ -11,5 +12,6 @@ const ListComponent = ({data, renderItem, renderEmpty}) => {
 			</ul>
 		);
 };
+
 
 export default ListComponent;

@@ -1,7 +1,8 @@
 import {useEffect, useState} from "react";
 
-export default function useDebounce(value, delay) {
-	const [debounceValue, setDebounceValue] = useState();
+
+function useDebounce(value, delay) {
+	const [debounceValue, setDebounceValue] = useState(value); // First render will be without delay because useState argument is value
 
 	useEffect(() => {
 		const timer = setTimeout(() => setDebounceValue(value), delay || 500)
@@ -11,3 +12,5 @@ export default function useDebounce(value, delay) {
 
 	return debounceValue;
 }
+
+export default useDebounce;

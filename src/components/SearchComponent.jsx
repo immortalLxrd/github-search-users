@@ -1,6 +1,7 @@
 import React from 'react';
 import Input from "./UI/Input";
 
+
 const SearchComponent = ({searchProps}) => {
 	return (
 		<Input
@@ -9,5 +10,6 @@ const SearchComponent = ({searchProps}) => {
 		/>
 	);
 };
+
 
 export default SearchComponent;

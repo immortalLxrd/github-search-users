@@ -8,13 +8,14 @@ const UserRepositoriesComponent = ({uri}) => {
 		<div className="user__repositories">
 			<FetchComponent
 				uri={uri + '/repos'}
-				renderSuccess={RepositoryComponent}
+				renderSuccess={RepositoryPropComponent}
 			/>
 		</div>
 	);
 };
 
-function RepositoryComponent(data) {
+
+const RepositoryPropComponent = (data) => {
 	return (
 		<>
 			<h2 className="user__title">Repositories:</h2>

@@ -5,12 +5,13 @@ import SearchComponent from "./SearchComponent";
 import useInput from "../hooks/useInput";
 
 
-const uri = "https://api.github.com/users/"
+const GITHUB_URI = "https://api.github.com/users/"
+
 
 const UserInfoComponent = () => {
 	const [loginProps] = useInput('');
 
-	let fullUri = `${uri}${loginProps.value}`
+	let URI = `${GITHUB_URI}${loginProps.value}`
 
 	return (
 		<div className="user">
@@ -19,17 +20,18 @@ const UserInfoComponent = () => {
 				{loginProps.value &&
 					<>
 						<FetchComponent
-							uri={fullUri}
-							renderSuccess={ProfileComponent}
+							uri={URI}
+							renderSuccess={ProfilePropComponent}
 						/>
-						<UserRepositoriesComponent uri={fullUri}/>
+						<UserRepositoriesComponent uri={URI}/>
 					</>}
 			</div>
 		</div>
 	);
 };
 
-function ProfileComponent(data) {
+
+const ProfilePropComponent = (data) => {
 	return (
 		<>
 			{data.documentation_url
@@ -41,11 +43,17 @@ function ProfileComponent(data) {
 						src={data.avatar_url}
 						alt={data.name}/>
 					<ul className="user__list">
-						<li><b>Name: </b>{data.name}</li>
+						{data.name && <li><b>Name: </b>{data.name}</li>}
 						<li><b>Login: </b>{data.login}</li>
 						<li><b>ID: </b>{data.id}</li>
-						{data.location && <li><b>Country: </b>{data.location}</li>}
+						{data.location && <li><b>Location: </b>{data.location}</li>}
 						{data.bio && <li><b>Bio: </b>{data.bio}</li>}
+						<li>
+							<b>Link: </b>
+							<a href={'https://github.com/' + data.login} rel="noopener noreferrer" target="_blank">
+								github.com/{(data.login)}
+							</a>
+						</li>
 					</ul>
 				</>)
 			}
