@@ -14,7 +14,6 @@ function useFetch(uri) {
 			.then(res => res.json())
 			.then(data => dispatch({type: fetchActions.FETCH_SUCCESS, payload: data}))
 			.catch(error => dispatch({type: fetchActions.FETCH_ERROR, error: error.toString()}));
-		console.log(state)
 	}, [valueDebounce]);
 
 
