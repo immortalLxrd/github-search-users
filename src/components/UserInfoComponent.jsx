@@ -1,15 +1,20 @@
 import React from 'react';
 import FetchComponent from "./FetchComponent";
+import locationLogo from "../assets/images/location.png";
+import UserRepositoriesComponent from "./UserRepositoriesComponent";
 
 
 const UserInfoComponent = ({uri, loginProps}) => {
 	return (
 		<>
 			{loginProps.value &&
-				<FetchComponent
-					uri={uri}
-					renderSuccess={ProfilePropComponent}
-				/>
+				<>
+					<FetchComponent
+						uri={uri}
+						renderSuccess={ProfilePropComponent}
+					/>
+					<UserRepositoriesComponent uri={uri}/>
+				</>
 			}
 		</>
 	);
@@ -27,11 +32,15 @@ const ProfilePropComponent = (data) => {
 						src={data.avatar_url}
 						alt={data.name}
 					/>
-					<ul className="user__list">
-						{data.name && <li><b>{data.name}</b></li>}
-						<li className="user__text_accent">{data.login}</li>
-						{data.location && <li>{data.location}</li>}
-						{data.bio && <li>{data.bio}</li>}
+					<ul>
+						{data.name && <li className="user__title">{data.name}</li>}
+						<li className="accent"><a href={"https://github.com/" + data.login}>{data.login}</a></li>
+						{data.location
+							&& <div className="user__location">
+								<img className="user__location-logo" src={locationLogo} alt=""/>
+								<li>{data.location}</li>
+							</div>}
+						{data.bio && <li className="user__bio">{data.bio}</li>}
 					</ul>
 				</>)
 			}

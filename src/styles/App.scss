@@ -1,7 +1,6 @@
-$primary-color: #0D1117;
-$secondary-color: #161B22;
-$text-primary-color: #C9D1D9;
-$accent-color: #464C55;
+@import "variables";
+@import "fonts";
+
 
 body {
   color: $text-primary-color;
@@ -31,7 +30,7 @@ body {
 }
 
 .search {
-  width: 600px;
+  max-width: 600px;
 
   &__input {
     background-color: inherit;
@@ -45,6 +44,10 @@ body {
   }
 }
 
+.accent {
+  color: $accent-color;
+}
+
 .user {
   padding: 20px;
   min-height: 75vh;
@@ -55,18 +58,20 @@ body {
 
   &__inner {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-gap: 20px;
-    width: 800px;
+    grid-template-columns: auto 1fr auto;
+    grid-gap: 40px;
+    width: 1000px;
     padding: 40px;
   }
 
   &__list {
+    margin-top: 20px;
   }
 
   &__title {
-    font-weight: bold;
+    font-family: Inter-Medium, serif;
     font-size: 24px;
+    font-weight: 500;
   }
 
   &__avatar {
@@ -76,9 +81,25 @@ body {
     border-radius: 50%;
   }
 
-  &__repositories{
+  &__repositories {
     height: 100%;
     border-left: 2px solid $accent-color;
     padding-left: 40px;
+  }
+
+  &__location {
+    display: flex;
+    gap: 10px;
+    margin-top: 5px;
+  }
+
+  &__location-logo {
+    width: 16px;
+    height: 20px;
+    align-self: center;
+  }
+
+  &__bio {
+    margin-top: 20px;
   }
 }

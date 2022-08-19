@@ -1,9 +1,8 @@
 import React from "react";
 import './styles/App.scss';
-import UserInfoComponent from "./components/UserInfoComponent";
-import UserRepositoriesComponent from "./components/UserRepositoriesComponent";
 import SearchComponent from "./components/SearchComponent";
 import useInput from "./hooks/useInput";
+import UserComponent from "./components/UserComponent";
 
 
 const GITHUB_URI = "https://api.github.com/users/";
@@ -23,12 +22,7 @@ const App = () => {
 					</div>
 				</header>
 				<div className="_container">
-					<div className="user">
-						<div className="user__inner">
-							<UserInfoComponent uri={URI} loginProps={loginProps}/>
-							<UserRepositoriesComponent uri={URI}/>
-						</div>
-					</div>
+					<UserComponent uri={URI} loginProps={loginProps}/>
 				</div>
 			</div>
 		</React.StrictMode>
