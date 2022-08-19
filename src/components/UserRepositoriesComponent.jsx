@@ -6,6 +6,7 @@ import ListComponent from "./ListComponent";
 const UserRepositoriesComponent = ({uri}) => {
 	return (
 		<div className="user__repositories">
+			<h2 className="user__title">Repositories:</h2>
 			<FetchComponent
 				uri={uri + '/repos'}
 				renderSuccess={RepositoryPropComponent}
@@ -18,7 +19,6 @@ const UserRepositoriesComponent = ({uri}) => {
 const RepositoryPropComponent = (data) => {
 	return (
 		<>
-			<h2 className="user__title">Repositories:</h2>
 			<ListComponent
 				data={Object.values(data)}
 				renderItem={item => item.name}
@@ -26,7 +26,7 @@ const RepositoryPropComponent = (data) => {
 			/>
 		</>
 	);
-}
+};
 
 
 export default UserRepositoriesComponent;

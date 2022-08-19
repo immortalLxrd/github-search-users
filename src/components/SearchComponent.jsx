@@ -5,7 +5,7 @@ import Input from "./UI/Input";
 const SearchComponent = ({searchProps}) => {
 	return (
 		<Input
-			className="user__input"
+			className="search__input"
 			{...searchProps}
 		/>
 	);

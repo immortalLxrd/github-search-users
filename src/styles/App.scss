@@ -1,5 +1,15 @@
-.App {
+$primary-color: #0D1117;
+$secondary-color: #161B22;
+$text-primary-color: #C9D1D9;
+$accent-color: #464C55;
 
+body {
+  color: $text-primary-color;
+}
+
+.App {
+  min-height: 100vh;
+  background-color: $primary-color;
 }
 
 ._container {
@@ -12,29 +22,46 @@
 
 }
 
-.user {
+.header {
+  height: 100px;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  min-height: 100vh;
+  background-color: $secondary-color;
+}
 
-  &__inner {
-    width: 200px;
-  }
+.search {
+  width: 600px;
 
   &__input {
+    background-color: inherit;
     width: 100%;
-    padding: 10px;
-    margin-bottom: 20px;
-    border: 2px solid #000;
+    padding: 14.5px;
+    border: 2px solid $accent-color;
+    color: #C9D1D9;
     border-radius: 10px;
     font-size: 24px;
     text-align: center;
   }
+}
+
+.user {
+  padding: 20px;
+  min-height: 75vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  &__inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 20px;
+    width: 800px;
+    padding: 40px;
+  }
 
   &__list {
-    margin-top: 20px;
   }
 
   &__title {
@@ -45,11 +72,13 @@
   &__avatar {
     width: 200px;
     height: 200px;
-    border: 2px solid #000;
-    border-radius: 10%;
+    border: 2px solid $accent-color;
+    border-radius: 50%;
   }
 
-  &__repositories {
-    margin-top: 20px;
+  &__repositories{
+    height: 100%;
+    border-left: 2px solid $accent-color;
+    padding-left: 40px;
   }
 }
