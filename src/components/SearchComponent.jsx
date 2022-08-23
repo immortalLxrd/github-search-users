@@ -6,6 +6,7 @@ const SearchComponent = ({searchProps}) => {
 	return (
 		<Input
 			className="search__input"
+			placeholder="Enter user login to search"
 			{...searchProps}
 		/>
 	);
