@@ -41,6 +41,15 @@ body {
     border-radius: 10px;
     font-size: 24px;
     text-align: center;
+    transition: .5s;
+
+    &:focus {
+      border-color: $text-primary-color;
+    }
+
+    &:hover {
+      border-color: $text-primary-color;
+    }
   }
 }
 
@@ -79,6 +88,11 @@ body {
     height: 200px;
     border: 2px solid $accent-color;
     border-radius: 50%;
+    transition: .5s;
+
+    &:hover {
+      border-color: $text-primary-color;
+    }
   }
 
   &__repositories {
